@@ -1,0 +1,128 @@
+:root {
+  --primary-blue: #007bff;
+  --primary-green: #ffffff;
+  --light-gradient: linear-gradient(135deg, #ade4e9, #27e6f0);
+  --medium-gray: #ccc;
+  --text-dark: #333;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--light-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px; /* Aumentado para más espacio */
+}
+
+.form-box {
+  background: var(--white);
+  padding: 40px; /* Más padding interno */
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.form-box h2 {
+  margin-bottom: 24px;
+  color: var(--text-dark);
+  font-size: 24px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: 1px solid var(--medium-gray);
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  margin: 10px 6px;
+  border: none;
+  border-radius: 50px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+  color: white;
+}
+
+.btn-blue {
+  background: var(--primary-blue);
+}
+
+.btn-blue:hover {
+  background: #0056b3;
+}
+
+.btn-green {
+  background: var(--primary-green);
+}
+
+.btn-green:hover {
+  background: #1e7e34;
+}
+
+.btn-gray {
+  background: gray;
+}
+
+.btn-gray:hover {
+  background: #555;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.divider {
+  margin: 24px 0;
+  color: var(--medium-gray);
+  font-size: 14px;
+}
+
+.small-text,
+.bottom-text {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--medium-gray);
+}
+
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .form-box {
+    padding: 30px;
+  }
+  .btn {
+    width: 100%;
+    margin: 6px 0;
+  }
+}
