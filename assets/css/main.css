@@ -1791,81 +1791,339 @@ section,
 
 
 
-.contact-section {
-  padding: 60px 0;
+
+
+
+
+
+.contact-section { 
+  padding: 5% 3%; /* Padding en porcentajes para mejor responsive */
   font-family: 'Arial', sans-serif;
+  width: 100%; /* Ancho completo */
+  box-sizing: border-box;
+} 
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 4%;
 }
 
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
+.section-title h2 {
+  color: #01186f;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.section-title h2:after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background: #2ac57d;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-container { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 4%; /* Gap en porcentaje */
   justify-content: space-between;
-}
+  align-items: flex-start; 
+  width: 100%;
+} 
 
-.contact-info {
-  flex: 1;
+.contact-info { 
+  flex: 1; 
   min-width: 280px;
+  width: 48%; /* Ancho en porcentaje */
+} 
+
+.info-box { 
+  display: flex; 
+  align-items: flex-start;
+  margin-bottom: 7%; /* Margen en porcentaje */
+  transition: transform 0.3s ease;
+} 
+
+.info-box:hover {
+  transform: translateY(-5px);
 }
 
-.info-box {
+.info-box i { 
+  font-size: 1.5rem; /* Tamaño en rem para mejor escalado */
+  color: #2ac57d; 
+  background: #e6f9f1; 
+  padding: 15px; /* Padding fijo para el icono */
+  border-radius: 50%; 
+  margin-right: 20px; /* Margen fijo a la derecha */
+  flex-shrink: 0; /* Evita que el ícono se encoja */
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 25px;
-}
-
-.info-box i {
-  font-size: 28px;
-  color: #2ac57d;
-  background: #e6f9f1;
-  padding: 15px;
-  border-radius: 50%;
-  margin-right: 15px;
-}
+  width: 30px; /* Ancho fijo para el círculo */
+  height: 30px; /* Altura fija para el círculo */
+} 
 
 .info-box h3 {
-  margin: 0;
-  font-weight: 600;
+  margin: 0 0 10px 0;
   color: #01186f;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
-.contact-form {
-  flex: 1.2;
-  min-width: 300px;
+.info-box p {
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
-form input,
-form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  resize: none;
-}
-
-.form-group {
+.info-content {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
 }
 
-.btn-send {
-  background: #2ac57d;
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 25px;
-  cursor: pointer;
+.info-box h3 { 
+  margin: 0 0 8px 0; /* Añadido margen inferior */
+  font-weight: 600; 
+  color: #01186f;
+  font-size: 1.2rem;
+} 
+
+.info-box p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.contact-form { 
+  flex: 1.2; 
+  min-width: 280px;
+  width: 48%; /* Ancho en porcentaje */
+  background: #f9f9f9;
+  padding: 5%; /* Padding en porcentaje */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+} 
+
+form input, 
+form textarea { 
+  width: 100%; 
+  box-sizing: border-box; /* Importante para que el padding no añada ancho extra */
+  padding: 3%; /* Padding en porcentaje */
+  margin-bottom: 4%; /* Margen en porcentaje */
+  border: 1px solid #ddd; 
+  border-radius: 6px;
+  resize: none;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem; /* Tamaño de fuente más consistente */
+  transition: border-color 0.3s;
+} 
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #2ac57d;
+  box-shadow: 0 0 0 2px rgba(42, 197, 125, 0.1);
+}
+
+.form-group { 
+  display: flex; 
+  gap: 4%; /* Gap en porcentaje */
+  width: 100%;
+  margin-bottom: 0; /* Eliminado el margen inferior ya que los inputs ya tienen margen */
+} 
+
+/* Corrección para dispositivos móviles */
+@media (max-width: 768px) {
+  .form-group {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .contact-info,
+  .contact-form {
+    flex: 100%;
+    width: 100%; /* Ancho completo en móviles */
+    margin-bottom: 5%; /* Margen inferior en porcentaje */
+  }
+  
+  .info-box {
+    margin-bottom: 5%; /* Margen inferior reducido en móviles */
+  }
+}
+
+/* Ajustes específicos para la sección de comunidad */
+.comunidad-section {
+  text-align: center;
+  margin-bottom: 4%; /* Margen en porcentaje */
+}
+
+.comunidad-title {
+  color: #666;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1%;
+}
+
+.comunidad-subtitle {
+  color: #01186f;
+  font-size: 1.4rem;
+  margin-bottom: 3%;
   font-weight: bold;
-  transition: background 0.3s;
 }
 
-.btn-send:hover {
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 4%;
+  width: 100%;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 4%;
+  text-align: left;
+}
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2ac57d;
+}
+
+.feature-text {
+  flex: 1;
+}
+
+.feature-title {
+  color: #01186f;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.feature-description {
+  color: #666;
+  line-height: 1.5;
+}
+
+.btn-send { 
+  background: #2ac57d; 
+  color: white; 
+  border: none; 
+  padding: 3% 6%; /* Padding en porcentaje */
+  border-radius: 30px;
+  cursor: pointer; 
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  min-width: 120px; /* Ancho mínimo para garantizar botón visible */
+} 
+
+.btn-send:hover { 
   background: #26a96a;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(38, 169, 106, 0.3);
 }
 
+/* Ajustes específicos para textos desalineados */
+.left-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.circle-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #f0f8f4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-title {
+  color: #01186f;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0 0 8px 0;
+}
+
+.feature-description {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Media query para tablets */
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .info-box i {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .btn-send {
+    width: 100%; /* Botón a ancho completo en móviles */
+  }
+}
