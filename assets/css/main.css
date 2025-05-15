@@ -1787,3 +1787,85 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+
+
+
+.contact-section {
+  padding: 60px 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.info-box i {
+  font-size: 28px;
+  color: #2ac57d;
+  background: #e6f9f1;
+  padding: 15px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.info-box h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #01186f;
+}
+
+.contact-form {
+  flex: 1.2;
+  min-width: 300px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: none;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-send {
+  background: #2ac57d;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-send:hover {
+  background: #26a96a;
+}
+
